@@ -16,10 +16,18 @@
 		<td>
 			<b>format</b><br/>
 			<i>string</i>
-		<td>
-		<td>
-			Response format allowed types (php,json, xml, jsonp).Default = json
 		</td>
+		<td>
+			Response format, allowed types (php,json, xml, jsonp). Default = json
+		</td>
+		<td>
+			<b>is_archived</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Return all archived projects, allowed values (1). Default = NULL
+		</td>
+		
 	</tr>
 
 </table>
