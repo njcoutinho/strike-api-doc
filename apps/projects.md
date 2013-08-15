@@ -155,3 +155,24 @@ array(
 		
 );
 ```
+
+
+## DELETE /projects/id
+Deletes a specific folder. Only admins have acess.
+
+### Example Request
+`DELETE /projects/1`
+
+### Parameters
+#### Attributes
+<table border="0">
+	<tr>
+		<td>
+			<b>id</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Project id 
+		</td>
+	</tr>	
+</table>
