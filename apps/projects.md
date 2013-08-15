@@ -13,19 +13,18 @@
 #### Attributes
 <table border="0">
 	<tr>
-		<td>format<br/>
-		<i>string</i>
+		<td>
+			<b>format</b><br/>
+			<i>string</i>
 		<td>
 		<td>
-		Response format allowed types (php,json, xml, jsonp).Default = json
-		<td>
+			Response format allowed types (php,json, xml, jsonp).Default = json
+		</td>
 	</tr>
 
 </table>
 
 
-| |	| |
-| is
 		 
 
 ### Response
