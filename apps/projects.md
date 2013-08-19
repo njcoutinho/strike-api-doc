@@ -54,69 +54,41 @@ Returns all the active projects from your account.
             "condition":"3",
             "user_id":"2053",
             "updated_time_stamp":"2013-08-16T09:02:13+05:30",
-            "created_timestamp":"2012-04-04T06:30:00+05:30",
+            "created_timestamp":"2012-08-15T06:30:00+05:30",
             "is_archived":null,
             "people_count":2,
             "user_info":[
-               {
-                  "id":"9",
-                  "dst":null,
-                  "fname":"Michael",
-                  "lname":"Scott",
-                  "email":"michael@acme.com",
-                  "gender":"m",
-                  "picture":"",
-                  "designation":"Project Manager",
-                  "is_archived":null,
-                  "timezone":"UP55",
-                  "company_id":"1",
-                  "is_admin":"1",
-                  "tel_mobile":"",
-                  "tel_office":"",
-                  "tel_fax":"",
-                  "tel_home":"",
-                  "company_info":{
-                     "id":"1",
-                     "name":"Acme"
-                  },
-                  "is_connected":1
-               },
-			   {
-                  "id":"9",
-                  "dst":null,
-                  "fname":"Holly",
-                  "lname":"Flax",
-                  "email":"holly@example.com",
-                  "gender":"m",
-                  "picture":"",
-                  "designation":"Developer",
-                  "is_archived":null,
-                  "timezone":"UP55",
-                  "company_id":"1",
-                  "is_admin":"1",
-                  "tel_mobile":"",
-                  "tel_office":"",
-                  "tel_fax":"",
-                  "tel_home":"",
-                  "company_info":{
-                     "id":"2",
-                     "name":"Dunder Mifflin"
-                  },
-                  "is_connected":1
-               }
+               
             ],
             "users_count":2,
             "company_count":2,
             "company_info":[
-               {
-                  "id":"1",
-                  "name":"Acme"
-               },
-               {
-                  "id":"2",
-                  "name":"Dunder Mifflin"
-               }
               
+            ],
+            "sub_projects":[
+
+            ]
+         },
+		 {
+            "id":"1",
+            "parent_id":null,
+            "name":"StrikeBase",
+            "plan_start":"2013-08-11",
+            "plan_completion":"2013-09-30",
+            "status":"2",
+            "last_update_id":null,
+            "condition":"3",
+            "user_id":"2053",
+            "updated_time_stamp":"2013-08-126T09:02:13+05:30",
+            "created_timestamp":"2012-08-11T06:30:00+05:30",
+            "is_archived":null,
+            "people_count":2,
+            "user_info":[
+               
+            ],
+            "users_count":2,
+            "company_count":2,
+            "company_info":[
               
             ],
             "sub_projects":[
@@ -165,44 +137,109 @@ Returns a specific project
 		 
 
 ### Response
-```php
-array(
-	'count' => 1,
-	'status' => 'success',
-	'data' => array(
-				'projects' => array(
-								0 => array(
-										'id'				=> '25',
-										'parent_id'			=> NULL,
-										'name'				=> 'Coffee shop website redesign',
-										'plan_start' 		=> '',
-										'plan_completion' 	=> '2014-05-16',
-										'status' 			=> '2', 
-										'last_update_id'	=> NULL,
-										'condition' 		=> '1',
-										'user_id' 			=> NULL, 
-										'updated_time_stamp'=> '2013-07-20T10:18:45+05:30',
-										'created_timestamp' => '2013-07-20T10:18:45+05:30',
-										'is_archived' 		=> NULL,
-										'people_count' 		=> 1,
-										'user_info' 		=> array (),
-										'sub_projects' 		=> array (),
-										'custom_fields'		=> array(),
-										'activity'			=> array(),
-										last_update_id' 	=> '56',
-										
-										
-								)
-								
-				)
-	)
-		
-);
+```json
+{
+   "count":1,
+   "status":"success",
+   "data":{
+      "id":"1",
+      "name":"Website Redesign",
+      "plan_start":"2013-08-16",
+      "plan_completion":"2013-08-30",
+      "status":"2",
+      "created_by":{
+         "id":"6",
+         "fname":"Karen",
+         "lname":"Williams",
+         "email":"karen@example.com",
+		 "company_id":"1",
+         "is_admin":"1",
+         "company_info":{
+         "id":"1",
+            "name":"Acme"
+         },
+         "is_connected":1
+      },
+      "custom_fields":[
+
+      ],
+      "activity":[
+    
+      ],
+      "company_info":{
+         "1":{
+            "id":"1",
+            "name":"Acme"
+         }
+      },
+      "is_archived":null,
+      "people_count":10
+   }
+}
+```
+
+## POST /projects/id/archive
+To archive a specific project
+
+### Example Request
+`POST /projects/1/archive`
+
+### Parameters
+#### Attributes
+<table border="0">
+	<tr>
+		<td>
+			<b>id</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Project id 
+		</td>
+	</tr>	
+</table>
+
+### Response
+```json
+{ 
+"status":"success",
+"archived_project_id":"5"
+}
+```
+
+## POST /projects/id/unarchive
+To unarchive a specific project
+
+### Example Request
+`POST /projects/1/unarchive`
+
+### Parameters
+#### Attributes
+<table border="0">
+	<tr>
+		<td>
+			<b>id</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Project id 
+		</td>
+	</tr>	
+</table>
+
+### Response
+```json
+{ 
+"status":"success",
+"deleted_project_id":"5",
+"connected_users" : "15_20_12_9" }
+}
 ```
 
 
+
+
 ## DELETE /projects/id
-Deletes a specific folder. Only admins have acess.
+Deletes a specific project. Only admins have acess.
 
 ### Example Request
 `DELETE /projects/1`
@@ -220,3 +257,11 @@ Deletes a specific folder. Only admins have acess.
 		</td>
 	</tr>	
 </table>
+
+### Response
+```json
+{
+"status":"success",
+"deleted_project_id":"5"
+}
+```
