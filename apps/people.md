@@ -19,7 +19,9 @@ Returns all the people related to you in your account.
 			<i>integer</i>
 		</td>
 		<td>
-			Return all the active users in the account,allowed values `(1)` (Only admins have access to this) 
+			Return all the active users in the account<br/>
+			Allowed values (1)<br/> 
+			Only admins have access
 		</td>
 	</tr>
 	<tr>
@@ -28,7 +30,9 @@ Returns all the people related to you in your account.
 			<i>integer</i>
 		</td>
 		<td>
-			Return all archived and active users, allowed values `(1)`. Default = NULL
+			Return all archived and active users<br/>
+			Allowed values (1)<br/>
+			Default = NULL
 		</td>
 	</tr>	
 </table>
@@ -214,7 +218,8 @@ Add a new user to your account
 			<i>string</i>
 		</td>
 		<td>
-			User gender allowed values `m or f`
+			User gender<br/> 
+			Allowed values m,f
 			
 		</td>
 	</tr>	
@@ -224,7 +229,9 @@ Add a new user to your account
 			<i>integer</i>
 		</td>
 		<td>
-			To make a user an Account manage, allowed values = `1 or 0`, Default = 0
+			To make a user an Account manage<br/>
+			Allowed values = (1 or 0)<br/>
+			Default = 0
 			
 		</td>
 	</tr>
@@ -235,7 +242,9 @@ Add a new user to your account
 			<i>integer</i>
 		</td>
 		<td>
-			To make a user an Account Holder, allowed values = `1 or 0`, Default = 0
+			To make a user an Account Holder<br/>
+			Allowed values = (1 or 0)<br/>
+			Default = 0
 			
 		</td>
 	</tr>
@@ -275,9 +284,38 @@ Delete/Archive users from account
 			<i>interger</i>
 		</td>
 		<td>
-			To permanently delete a user, allowed values `1 or 0`, Default = 0
+			To permanently delete a user
+			<br/>Allowed values (1 or 0)
+			<br/>Default = 0
 		</td>
 	</tr>	
+</table>
+
+### Response
+```json
+{
+"status":"success"
+}
+```
+
+## Unarchive user
+Unarchive a user
+### Method
+`DELETE /people/id/undo`
+
+### Parameters
+#### Attributes
+<table border="0">
+	<tr>
+		<td>
+			<b>id</b><br/>
+			<i>interger</i>
+		</td>
+		<td>
+			User id to be unarchived
+		</td>
+	</tr>
+	
 </table>
 
 ### Response
