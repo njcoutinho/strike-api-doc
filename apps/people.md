@@ -19,7 +19,7 @@ Returns all the people related to you in your account.
 			<i>integer</i>
 		</td>
 		<td>
-			Return all the active users in the account,allowed values (1) (Only admins have access to this) 
+			Return all the active users in the account,allowed values `(1)` (Only admins have access to this) 
 		</td>
 	</tr>
 	<tr>
@@ -28,7 +28,7 @@ Returns all the people related to you in your account.
 			<i>integer</i>
 		</td>
 		<td>
-			Return all archived and active users, allowed values (1). Default = NULL
+			Return all archived and active users, allowed values `(1)`. Default = NULL
 		</td>
 	</tr>	
 </table>
@@ -135,7 +135,7 @@ Add a new user to your account
 			<i>integer</i>
 		</td>
 		<td>
-			Company which the user belongs to<br/>
+			Company id which the user will be added to<br/>
 			<i>required</i>
 		</td>
 	</tr>
@@ -145,7 +145,7 @@ Add a new user to your account
 			<i>integer</i>
 		</td>
 		<td>
-			
+			Project id which the user will be added to
 		</td>
 	</tr>
 	<tr>
@@ -214,7 +214,7 @@ Add a new user to your account
 			<i>string</i>
 		</td>
 		<td>
-			User gender (m or f)
+			User gender allowed values `m or f`
 			
 		</td>
 	</tr>	
@@ -224,7 +224,7 @@ Add a new user to your account
 			<i>integer</i>
 		</td>
 		<td>
-			To make a user an Account manage,values allowed = (1 or 0) Default= 0
+			To make a user an Account manage, allowed values = `1 or 0`, Default = 0
 			
 		</td>
 	</tr>
@@ -235,7 +235,7 @@ Add a new user to your account
 			<i>integer</i>
 		</td>
 		<td>
-			To make a user an Account Holder,values allowed = (1 or 0) Default= 0
+			To make a user an Account Holder, allowed values = `1 or 0`, Default = 0
 			
 		</td>
 	</tr>
@@ -248,5 +248,41 @@ Add a new user to your account
 ```json
 {
 "status":"success","inserted_id":10
+}
+```
+
+## Delete/Archive user
+Delete/Archive users from account
+
+### Method
+`DELETE /people/1/`
+
+### Parameters
+#### Attributes
+<table border="0">
+	<tr>
+		<td>
+			<b>id</b><br/>
+			<i>interger</i>
+		</td>
+		<td>
+			User id to be archived/deleted 
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>permanent_delete</b><br/>
+			<i>interger</i>
+		</td>
+		<td>
+			To permanently delete a user, allowed values `1 or 0`, Default = 0
+		</td>
+	</tr>	
+</table>
+
+### Response
+```json
+{
+"status":"success"
 }
 ```
