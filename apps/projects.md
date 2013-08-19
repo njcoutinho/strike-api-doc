@@ -312,6 +312,75 @@ To create a new project
 	</tr>	
 <tr>
 		<td>
+			<b>copy_people_project_id</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Project id from where the people should be copied over
+		</td>
+	</tr>	
+</table>
+
+### Response
+```json
+{ 
+"status":"success",
+"inserted_id":id, 
+"name":"Alpha", 
+"plan_start":"2013-06-17", 
+"plan_completion":"2013-08-18", 
+"parent_id":NULL, 
+"data_status":"2", 
+"user_ids":"20" 
+}
+```
+
+## Update project
+Update a project's details
+### Example Request
+`POST /project/id`
+
+### Parameters
+#### Attributes
+<table border="0">
+	<tr>
+		<td>
+			<b>name</b><br/>
+			<i>string</i>
+		</td>
+		<td>
+			Project name 
+		</td>
+	</tr>
+<tr>
+		<td>
+			<b>plan_start</b><br/>
+			<i>date</i>
+		</td>
+		<td>
+			Project planned start date
+		</td>
+	</tr>	
+<tr>
+		<td>
+			<b>plan_completion</b><br/>
+			<i>date</i>
+		</td>
+		<td>
+			Project planned completion date
+		</td>
+	</tr>	
+<tr>
+		<td>
+			<b>parent_id</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Parent project (while creating a sub-project, default = NULL) 
+		</td>
+	</tr>	
+<tr>
+		<td>
 			<b>copy_people_project_id</b><
 			<i>integer</i>
 		</td>
