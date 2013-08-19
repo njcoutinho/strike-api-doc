@@ -4,8 +4,11 @@
 ## Get people
 Returns all the people related to you in your account.
 
-### Example Request
+### Method
 `GET /people`
+
+### Example Request
+`GET https://api.secure.strikebase.com/people?access_token='access_token'&format=json&show_all=1&is_archived=1`
 
 ### Parameters
 #### Attributes
@@ -111,5 +114,139 @@ Returns all the people related to you in your account.
          },
       ]
    }
+}
+```
+
+## Create user
+Add a new user to your account
+
+### Method
+`POST /people`
+
+### Example Request
+``
+
+### Parameters
+#### Attributes
+<table border="0">
+	<tr>
+		<td>
+			<b>company_id</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Company which the user belongs to<br/>
+			<i>required</i>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>project_ids</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>fname</b><br/>
+			<i>string</i>
+		</td>
+		<td>
+			User's first name<br/>
+			<i>required</i>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>lname</b><br/>
+			<i>string</i>
+		</td>
+		<td>
+			User's last name<br/>
+			<i>required</i>
+		</td>
+	</tr>	
+	<tr>
+		<td>
+			<b>email</b><br/>
+			<i>string</i>
+		</td>
+		<td>
+			User's email name<br/>
+			<i>required</i>
+		</td>
+	</tr>
+<tr>
+		<td>
+			<b>timezone</b><br/>
+			<i>string</i>
+		</td>
+		<td>
+			User's timezone<br/>
+			<i>required</i>
+		</td>
+	</tr>	
+	<tr>
+		<td>
+			<b>designation</b><br/>
+			<i>string</i>
+		</td>
+		<td>
+			User's designation<br/>
+			<i>required</i>
+		</td>
+	</tr>	
+	<tr>
+		<td>
+			<b>dateofbirth</b><br/>
+			<i>string</i>
+		</td>
+		<td>
+			User's date of birth
+			
+		</td>
+	</tr>
+<tr>
+		<td>
+			<b>gender</b><br/>
+			<i>string</i>
+		</td>
+		<td>
+			User gender (m or f)
+			
+		</td>
+	</tr>	
+	<tr>
+		<td>
+			<b>assign_is_admin</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			To make a user an Account manage,values allowed = (1 or 0) Default= 0
+			
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<b>assign_is_account_holder</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			To make a user an Account Holder,values allowed = (1 or 0) Default= 0
+			
+		</td>
+	</tr>
+</table>
+
+
+		 
+
+### Response
+```json
+{
+"status":"success","inserted_id":10
 }
 ```
