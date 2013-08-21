@@ -121,3 +121,59 @@ Create a List for a projecy board
 
 ```
 
+## Move tasks to another lists
+Move tasks from one lists to another list
+
+### Method
+`POST /lists/id/move`
+
+### Example Request
+``
+
+### Parameters
+#### Attributes
+<table border="0">
+	<tr>
+		<td>
+			<b>target_project_ids</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Destination list's project id<br/>
+			<i>required</i>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>project_ids</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Source list's project id<br/>
+			<i>required</i>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>to_list</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Destinations list's id<br/>
+		</td>
+	</tr>	
+	<tr>
+		<td>
+			<b>to_list</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Destinations list's id<br/>
+		</td>
+	</tr>	
+</table>
+
+### Response
+```json
+
+```
