@@ -426,3 +426,104 @@ Unarchive a list
 ```json
 
 ```
+
+---
+
+## Get Tasks(Cards)
+Get Tasks for a particular list
+
+### Method
+`GET /cards`
+
+### Example Request
+``
+
+### Parameters
+#### Attributes
+<table border="0">
+	<tr>
+		<td>
+			<b>list_id</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Souce list ID<br/>
+			<i>required</i>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>project_ids</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Task project id<br/>
+			Default = NULL
+			
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>project_ids</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Task project id<br/>
+			
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>is_archived</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Return all archived tasks<br/>
+			Default = 1
+			
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<b>is_watched</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Return all watched tasks<br/>
+			Default = 1
+			
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<b>creator_id</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Return all tasks created by a specific user<br/>
+			
+			
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<b>limit</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Number of results to be returned<br/>
+			Default = 50 max = 100
+			
+		</td>
+	</tr>
+	
+</table>
+
+### Response
+```json
+
+```
+
