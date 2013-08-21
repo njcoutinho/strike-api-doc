@@ -121,7 +121,7 @@ Create a List for a projecy board
 
 ```
 
-## Move tasks to another lists
+## Move tasks to another list
 Move tasks from one lists to another list
 
 ### Method
@@ -171,6 +171,255 @@ Move tasks from one lists to another list
 			Destinations list's id<br/>
 		</td>
 	</tr>	
+</table>
+
+### Response
+```json
+
+```
+
+## Copy lists
+Create a copy of a list
+
+### Method
+`POST /lists/id/copy`
+
+### Example Request
+``
+
+### Parameters
+#### Attributes
+<table border="0">
+	<tr>
+		<td>
+			<b>target_project_ids</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Destination list's project id<br/>
+			<i>required</i>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>project_ids</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Source list's project id<br/>
+			<i>required</i>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>id</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Source list's id<br/>
+		</td>
+	</tr>	
+	<tr>
+		<td>
+			<b>name</b><br/>
+			<i>string</i>
+		</td>
+		<td>
+			New list's name<br/>
+		</td>
+	</tr>	
+</table>
+
+### Response
+```json
+
+```
+
+
+
+## Copy list tasks
+Copy tasks from one list to another
+
+### Method
+`POST /lists/id/copy_cards`
+
+### Example Request
+``
+
+### Parameters
+#### Attributes
+<table border="0">
+	<tr>
+		<td>
+			<b>target_project_ids</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Destination list's project id<br/>
+			<i>required</i>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>project_ids</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Source list's project id<br/>
+			<i>required</i>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>to_list</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Destinations list's id<br/>
+		</td>
+	</tr>	
+	<tr>
+		<td>
+			<b>to_list</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Destinations list's id<br/>
+		</td>
+	</tr>	
+</table>
+
+### Response
+```json
+
+```
+
+## Empty list
+Empty the list i.e. (remove all tasks from the list)
+
+### Method
+`POST /lists/id/empty_list`
+
+### Example Request
+``
+
+### Parameters
+#### Attributes
+<table border="0">
+	<tr>
+		<td>
+			<b>id</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			List ID<br/>
+			<i>required</i>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>project_ids</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Source list's project id<br/>
+			<i>required</i>
+		</td>
+	</tr>
+	
+</table>
+
+### Response
+```json
+
+```
+
+## Archive/Delete list
+Archive or permanently delete a list
+
+### Method
+`DELETE /lists/id/`
+
+### Example Request
+``
+
+### Parameters
+#### Attributes
+<table border="0">
+	<tr>
+		<td>
+			<b>id</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			List ID<br/>
+			<i>required</i>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>project_ids</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Source list's project id<br/>
+			<i>required</i>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>is_deleted</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Permanently delete lis<br/>
+			allowed values (1)<br/>
+			
+		</td>
+	</tr>
+	
+</table>
+
+### Response
+```json
+
+```
+
+
+
+## Unarchive list
+Unarchive a list
+
+### Method
+`POST /lists/id/unarchive_list`
+
+### Example Request
+``
+
+### Parameters
+#### Attributes
+<table border="0">
+	<tr>
+		<td>
+			<b>id</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			List ID<br/>
+			<i>required</i>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>project_ids</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Source list's project id<br/>
+			<i>required</i>
+		</td>
+	</tr>
+	
 </table>
 
 ### Response
