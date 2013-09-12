@@ -527,3 +527,93 @@ Get Tasks for a particular list
 
 ```
 
+## Get Task(Card)
+Get a particular Task
+
+### Method
+`GET /cards/id`
+
+### Example Request
+``
+
+### Parameters
+#### Attributes
+<table border="0">
+	<tr>
+		<td>
+			<b>id</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Task ID<br/>
+			<i>required</i>
+		</td>
+	</tr>
+</table>
+
+### Response
+```json
+
+```
+
+## Create Task(Card)
+Create a Task
+
+### Method
+`POST /cards`
+
+### Example Request
+``
+
+### Parameters
+#### Attributes
+<table border="0">
+	<tr>
+		<td>
+			<b>name</b><br/>
+			<i>string</i>
+		</td>
+		<td>
+		
+			Task name<br/>
+			<i>required</i>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>description</b><br/>
+			<i>string</i>
+		</td>
+		<td>
+			Task description<br/>
+			
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>project_ids</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Project ID to which the task belongs to<br/>
+			<i>required</i>
+			
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>people_ids</b><br/>
+			<i>string</i>
+		</td>
+		<td>
+			Project ID to which the task belongs to<br/>
+			<i>required</i>
+			
+		</td>
+	</tr>
+</table>
+
+### Response
+```json
+
+```
