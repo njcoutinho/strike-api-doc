@@ -12,15 +12,16 @@ Returns all the calendar and calendar events related to you in your account.
 
 ### Parameters
 #### Attributes
+
 <table border="0">
 	<tr>
 		<td>
 			<b>is_calendar</b><br/>
 			<i>integer</i>
 		</td>
+		
 		<td>
-			Return all the calendar in the account<br/>
-			Allowed values (0)<br/> 
+			Allowed values (1)<br/> 
 			Default = NULL
 		</td>
 	</tr>
@@ -55,7 +56,6 @@ Returns all the calendar and calendar events related to you in your account.
 		</td>
 		<td>
 			Return all calendar events for the given project<br/>
-			Allowed values (integer)<br/>
 			Default = NULL
 		</td>
 	</tr>
@@ -63,11 +63,11 @@ Returns all the calendar and calendar events related to you in your account.
 	<tr>
 		<td>
 			<b>calendar_ids</b><br/>
-			<i>integer</i>
+			<i>string</i>
 		</td>
 		<td>
-			Return all calendar events for the given calendar<br/>
-			Allowed values (multiple integer underscore separated)<br/>
+			Return all calendar events for the given calendar <br/>
+			pass multiple calendar_ids with underscore seperated. Example : calendar_ids = 1_2_3_4
 			Default = NULL
 		</td>
 	</tr>
@@ -91,9 +91,9 @@ Returns all the calendar and calendar events related to you in your account.
 			<i>integer</i>
 		</td>
 		<td>
-			Return all the project whose start date or end date lies between passed calendar from date and to date in the account<br/>
+			Return all the project whose start date or end date lies between passed calendar event from date and to date in the account<br/>
 			Allowed values (1)<br/> 
-			Default NULL
+			Default = NULL
 		</td>
 	</tr>
 	
@@ -105,7 +105,7 @@ Returns all the calendar and calendar events related to you in your account.
 		<td>
 			Return all the tasks whose deadline ranges between passed calendar from date and to date related to user in the account<br/>
 			Allowed values (1)<br/> 
-			Default NULL
+			Default = NULL
 		</td>
 	</tr>
 	
@@ -117,7 +117,7 @@ Returns all the calendar and calendar events related to you in your account.
 		<td>
 			Return all the tasks whose deadline ranges between passed calendar from date and to date related to account excluding users cards in the account<br/>
 			Allowed values (1)<br/> 
-			Default NULL
+			Default = NULL
 		</td>
 	</tr>
 	
@@ -129,8 +129,8 @@ Returns all the calendar and calendar events related to you in your account.
 		<td>
 			Return all the archived tasks in the account<br/>
 			Allowed values (1)<br/> 
-			Only applicable for my_cards and team_cards
-			Default NULL
+			Only applicable for my_cards and team_cards<br/>
+			Default = NULL
 		</td>
 	</tr>
 
@@ -143,7 +143,7 @@ Returns all the calendar and calendar events related to you in your account.
 ```json
 {
 	"status":"success",
-	"count":2,
+	"count":1,
 	"data":
 	{
 		"events":
@@ -158,32 +158,33 @@ Returns all the calendar and calendar events related to you in your account.
 				"id":"5452_1376611200",
 				"name":"Test 213",
 				"user_id":"20",
-				"creator_info":{
-				"id":"15",
-				"dst":"1",
-				"fname":"Ankit",
-				"lname":"Choubey",
-				"email":"ankit@gdiz.com",
-				"gender":"m",
-				"picture":"https:\/\/d2zc3me2o4gzwx.cloudfront.net\/default_18.jpg",
-				"designation":"Tester",
-				"is_archived":null,
-				"timezone":"UP55",
-				"company_id":"1",
-				"is_lite":null,
-				"is_admin":"1",
-				"role":null,
-				"tel_mobile":"+3589420859733",
-				"tel_office":"9420859733",
-				"tel_fax":"9420859733",
-				"tel_home":"9420859733",
-				"send_email_is_online":"1",
-				"company_info":
-					{
-						"id":"1",
-						"name":"GDiz Test 1"
-					},
-				"is_connected":1
+				"creator_info":
+				{
+					"id":"15",
+					"dst":"1",
+					"fname":"Ankit",
+					"lname":"Choubey",
+					"email":"ankit@gdiz.com",
+					"gender":"m",
+					"picture":"https:\/\/d2zc3me2o4gzwx.cloudfront.net\/default_18.jpg",
+					"designation":"Tester",
+					"is_archived":null,
+					"timezone":"UP55",
+					"company_id":"1",
+					"is_lite":null,
+					"is_admin":"1",
+					"role":null,
+					"tel_mobile":"+3589420859733",
+					"tel_office":"9420859733",
+					"tel_fax":"9420859733",
+					"tel_home":"9420859733",
+					"send_email_is_online":"1",
+					"company_info":
+						{
+							"id":"1",
+							"name":"GDiz Test 1"
+						},
+					"is_connected":1
 				},
 				"description":null,
 				"is_series":0,
@@ -196,7 +197,8 @@ Returns all the calendar and calendar events related to you in your account.
 					"privacy":null,
 					"is_infinite":null,
 					"reminders":null,
-					"guest_info":[
+					"guest_info":
+					[
 						{
 							"id":"20",
 							"dst":null,
@@ -224,118 +226,8 @@ Returns all the calendar and calendar events related to you in your account.
 							},
 							"is_connected":1,
 							"response":null
-						},
-						{
-							"id":"22",
-							"dst":"1",
-							"fname":"Suryakant",
-							"lname":"1",
-							"email":"suryakant1@gdiz.com",
-							"gender":"m",
-							"picture":"https:\/\/d2zc3me2o4gzwx.cloudfront.net\/default_15.jpg",
-							"designation":"Developer",
-							"is_archived":null,
-							"timezone":"UP55",
-							"company_id":"1",
-							"is_lite":null,
-							"is_admin":"1",
-							"role":null,
-							"tel_mobile":"+3586676678",
-							"tel_office":null,
-							"tel_fax":null,
-							"tel_home":"gfh657gfh",
-							"send_email_is_online":"1",
-							"company_info":{
-							"id":"1",
-							"name":"GDiz Test 1"
-							},
-							"is_connected":1,
-							"response":null
-							},
-							{
-								"id":"37",
-								"dst":null,
-								"fname":"Alok",
-								"lname":"Banjare",
-								"email":"alok1@gdiz.com",
-								"gender":"m",
-								"picture":"https:\/\/d2zc3me2o4gzwx.cloudfront.net\/default_11.jpg",
-								"designation":"Developer",
-								"is_archived":null,
-								"timezone":"UP55",
-								"company_id":"1",
-								"is_lite":null,
-								"is_admin":"1",
-								"role":"1",
-								"tel_mobile":null,
-								"tel_office":"+91-9922334455",
-								"tel_fax":"+91-992233445",
-								"tel_home":"+91-9922334455",
-								"send_email_is_online":"1",
-								"company_info":
-								{
-									"id":"1",
-									"name":"GDiz Test 1"
-								},
-								"is_connected":1,
-								"response":null
-							},
-							{
-								"id":"41",
-								"dst":null,
-								"fname":"Savata",
-								"lname":"Khamkar",
-								"email":"dhdsfdari@gdiz.com",
-								"gender":"m",
-								"picture":"https:\/\/s3.amazonaws.com\/strikebase_profile_TEST\/1_41_t1375273585.jpg",
-								"designation":"dev",
-								"is_archived":null,
-								"timezone":"UP55",
-								"company_id":"1",
-								"is_lite":null,
-								"is_admin":"1",
-								"role":null,
-								"tel_mobile":null,
-								"tel_office":null,
-								"tel_fax":null,
-								"tel_home":null,
-								"send_email_is_online":null,
-								"company_info":
-								{
-									"id":"1",
-									"name":"GDiz Test 1"
-								},
-								"is_connected":1,
-								"response":null
-							},
-						{
-							"id":"45",
-							"dst":null,
-							"fname":"Ranjit",
-							"lname":"Randive",
-							"email":"ranjit@gdiz.com",
-							"gender":"m",
-							"picture":"https:\/\/d2zc3me2o4gzwx.cloudfront.net\/default_7.jpg",
-							"designation":"developer",
-							"is_archived":null,
-							"timezone":"UP55",
-							"company_id":"1",
-							"is_lite":null,
-							"is_admin":"1",
-							"role":null,
-							"tel_mobile":null,
-							"tel_office":null,
-							"tel_fax":null,
-							"tel_home":null,
-							"send_email_is_online":"1",
-							"company_info":
-							{
-								"id":"1",
-								"name":"GDiz Test 1"
-							},
-							"is_connected":1,
-							"response":null
 						}
+						
 					],
 					"project_info":[
 					],
@@ -363,6 +255,7 @@ Add a new calendar and calendar event to your account
 
 ### Parameters
 #### Attributes
+
 <table border="0">
 	<tr>
 		<td>
@@ -383,9 +276,9 @@ Add a new calendar and calendar event to your account
 			<i>string</i>
 		</td>
 		<td>
-			Calendar name<br/>
+			To give name to calendar<br/>
 			Only applicable for is_calendar<br/>
-			<i> Required if is_calendar is passed </i>
+			Required if is_calendar is passed
 		</td>
 	</tr>
 	
@@ -409,7 +302,7 @@ Add a new calendar and calendar event to your account
 		<td>
 			Calendar events to be created for given date<br/>
 			Allowed values (date and time)<br/>
-			<i> Required if is_calendar is not passed </i>
+			Required if is_calendar is not passed
 		</td>
 	</tr>
 	
@@ -421,7 +314,7 @@ Add a new calendar and calendar event to your account
 		<td>
 			Calendar events to date<br/>
 			Allowed values (date and time)<br/>
-			<i> Required if is_calendar is not passed </i>
+			Required if is_calendar is not passed
 		</td>
 	</tr>
 	
@@ -432,7 +325,7 @@ Add a new calendar and calendar event to your account
 		</td>
 		<td>
 			Title of calendar event<br/>
-			<i> Required if is_calendar is not passed </i>
+			Required if is_calendar is not passed
 		</td>
 	</tr>
 	
@@ -477,19 +370,19 @@ Add a new calendar and calendar event to your account
 			<i>integer</i>
 		</td>
 		<td>
-			Project id to which the event will be added to
+			Project id to which the event will be added to<br/>
 		</td>
 	</tr>
 	
 	<tr>
 		<td>
 			<b>guest </b><br/>
-			<i>integer with underscore seperated</i>
+			<i>string</i>
 		</td>
 		<td>
 			To add the guest to the Event <br/>
-			Default = NULL <br/>
-			only applicable for private event
+			only applicable for private event<br/>
+			Default = NULL 
 		</td>
 	</tr>
 	
@@ -502,7 +395,9 @@ Add a new calendar and calendar event to your account
 		</td>
 		<td>
 			To add the permission for guest <br/>
-			Allowed values (2)<br/> 
+			Allowed values (1,2)<br/> 
+			1 : Guest can modify event <br/>
+			2 : Guest can only invite others <br/>
 			Default = 1 <br/>
 			only applicable for private event and guest is passed
 		</td>
@@ -531,7 +426,7 @@ Add a new calendar and calendar event to your account
 			To make the event as all day event <br/>
 			Allowed values (1 to 4)<br/> 
 			Default = NULL <br/>
-			<i> Required if reminder_value is passed</i>
+			Required if reminder_value is passed
 		</td>
 	</tr>
 	
@@ -544,7 +439,7 @@ Add a new calendar and calendar event to your account
 		<td>
 			To pass reminder value to the event <br/>
 			Default = NULL <br/>
-			<i> Required if reminder_type is passed</i>
+			Required if reminder_type is passed
 		</td>
 	</tr>
 	
@@ -553,11 +448,18 @@ Add a new calendar and calendar event to your account
 	<tr>
 		<td>
 			<b>repeats </b><br/>
-			<i>json encoded</i>
+			<i>string</i>
 		</td>
 		<td>
 			To make the event repetitive <br/>
 			Default = NULL <br/>
+			Format :  [{"repeat":"1 to 4", "repeats_every":"1", "repeats_on":"1 to 7", "end":"" }] <br/>
+			<h5> 1)  repeat : 1 = Daily , 2 = Weekly , 3 = Monthly , 4 = Yearly<br/>
+			2)  repeats_every : Integer less than 30 <br/>
+			3)  repeats_on : 1= Monday , 2= Tuesday ....... 7 = Sunday <br/>
+			4)  End :  0 = Events created daily , Integer = Number of Events created , date = (Date-Format : Year-month-day) . Event will be created till the date passed </h5>
+			
+			
 		</td>
 	</tr>
 	
@@ -590,6 +492,7 @@ Update calendar and calendar event to your account
 
 ### Parameters
 #### Attributes
+
 <table border="0">
 	<tr>
 		<td>
@@ -612,7 +515,7 @@ Update calendar and calendar event to your account
 		<td>
 			Calendar name<br/>
 			Only applicable for is_calendar<br/>
-			<i> Required if is_calendar is passed </i>
+			Required if is_calendar is passed
 		</td>
 	</tr>
 	
@@ -637,7 +540,7 @@ Update calendar and calendar event to your account
 		<td>
 			Calendar events to be updated for given date<br/>
 			Allowed values (date and time)<br/>
-			<i> Required if is_calendar is not passed </i>
+			Required if is_calendar is not passed 
 		</td>
 	</tr>
 	
@@ -649,7 +552,7 @@ Update calendar and calendar event to your account
 		<td>
 			Calendar events to date<br/>
 			Allowed values (date and time)<br/>
-			<i> Required if is_calendar is not passed </i>
+			Required if is_calendar is not passed 
 		</td>
 	</tr>
 	
@@ -660,7 +563,7 @@ Update calendar and calendar event to your account
 		</td>
 		<td>
 			Title of calendar event<br/>
-			<i> Required if is_calendar is not passed </i>
+			Required if is_calendar is not passed
 		</td>
 	</tr>
 	
@@ -720,7 +623,9 @@ Update calendar and calendar event to your account
 		</td>
 		<td>
 			To update the permission for guest <br/>
-			Allowed values (2)<br/> 
+			Allowed values (1 , 2)<br/> 
+			1 : Guest can modify event <br/>
+			2 : Guest can only invite others <br/>
 			Default = 1 <br/>
 			only applicable for private event and guest exist on the event
 		</td>
@@ -749,7 +654,7 @@ Update calendar and calendar event to your account
 			To make the event as all day event <br/>
 			Allowed values (1 to 4)<br/> 
 			Default = NULL <br/>
-			<i> Required if reminder_value is passed</i>
+			Required if reminder_value is passed
 		</td>
 	</tr>
 	
@@ -762,7 +667,7 @@ Update calendar and calendar event to your account
 		<td>
 			To pass reminder value to the event <br/>
 			Default = NULL <br/>
-			<i> Required if reminder_type is passed</i>
+			Required if reminder_type is passed
 		</td>
 	</tr>
 	
@@ -771,11 +676,17 @@ Update calendar and calendar event to your account
 	<tr>
 		<td>
 			<b>repeats </b><br/>
-			<i>json encoded</i>
+			<i>string</i>
 		</td>
 		<td>
 			To make the event repetitive <br/>
 			Default = NULL <br/>
+			Format :  [{"repeat":"1 to 4", "repeats_every":"1", "repeats_on":"1 to 7", "end":"" }] <br/>
+			<h5> 1)  repeat : 1 = Daily , 2 = Weekly , 3 = Monthly , 4 = Yearly<br/>
+			2)  repeats_every : Integer less than 30 <br/>
+			3)  repeats_on : 1= Monday , 2= Tuesday ....... 7 = Sunday <br/>
+			4)  End :  0 = Events created daily , Integer = Number of Events created , date = (Date-Format : Year-month-day) . Event will be created till the date passed </h5>
+			
 		</td>
 	</tr>
 	
@@ -787,6 +698,10 @@ Update calendar and calendar event to your account
 		</td>
 		<td>
 			To update repetitive event<br/>
+			Allowed values (1 OR 2 OR 3)<br/> 
+			1. Only this Event.
+			2. All Following.
+			3. All the Event.
 			Default = NULL <br/>
 		</td>
 	</tr>
@@ -795,8 +710,7 @@ Update calendar and calendar event to your account
 	
 </table>
 
-
-		 
+ 
 
 ### Response
 ```json
@@ -812,7 +726,7 @@ Update calendar and calendar event to your account
 
 
 
-## Update calendar response
+## Update calendar event response
 Update particular calendar event response to your account
 
 ### Method
@@ -823,6 +737,7 @@ Update particular calendar event response to your account
 
 ### Parameters
 #### Attributes
+
 <table border="0">
 	<tr>
 		<td>
@@ -831,9 +746,12 @@ Update particular calendar event response to your account
 		</td>
 		<td>
 			To update the response to calendar event<br/>
-			<i>required</i><br/>
+			required<br/>
 			Allowed values (1,2,3)<br/> 
-			Default = NULL
+			1. Yes <br/>
+			2. May Be <br/>
+			3 . No <br/>
+			
 		</td>
 	</tr>
 	
@@ -845,8 +763,10 @@ Update particular calendar event response to your account
 		</td>
 		<td>
 			To pass type of calendar event<br/>
-			<i>required only for repetitive event</i><br/>
+			required only for repetitive event<br/>
 			Allowed values (1,2)<br/> 
+			1. Only this Event
+			2. All the Event in series
 			Default = NULL
 		</td>
 	</tr>
@@ -859,7 +779,7 @@ Update particular calendar event response to your account
 		</td>
 		<td>
 			To pass the date of event<br/>
-			<i>required only for repetitive event and type 1 Event</i><br/>
+			required only for repetitive event and type = 1 <br/>
 			Allowed values (date)<br/> 
 			Default = NULL
 		</td>
@@ -881,7 +801,7 @@ Update particular calendar event response to your account
 
 
 
-## Update calendar guest
+## Update calendar event guest
 To add guest to particular event
 
 ### Method
@@ -892,15 +812,17 @@ To add guest to particular event
 
 ### Parameters
 #### Attributes
+
 <table border="0">
 	<tr>
 		<td>
 			<b>guest</b><br/>
-			<i>integer with underscore separated</i>
+			<i>string</i>
 		</td>
 		<td>
 			To pass the user id to be added as guest in calendar event<br/>
-			<i>required</i>
+			Example : guest = 1_2_3_4 <br/>
+			required
 		</td>
 	</tr>
 </table>
@@ -927,6 +849,7 @@ To move event from one date to another date
 
 ### Parameters
 #### Attributes
+
 <table border="0">
 	<tr>
 		<td>
@@ -935,7 +858,7 @@ To move event from one date to another date
 		</td>
 		<td>
 			To pass start date and time to be update from date<br/>
-			<i>required</i>
+			required
 		</td>
 	</tr>
 	
@@ -947,7 +870,7 @@ To move event from one date to another date
 		</td>
 		<td>
 			To pass start date and time to be update till date<br/>
-			<i>required</i>
+			required
 		</td>
 	</tr>
 	
@@ -959,7 +882,7 @@ To move event from one date to another date
 		</td>
 		<td>
 			To pass original date and time of from date of event<br/>
-			<i>required</i>
+			required
 		</td>
 	</tr>
 	
@@ -972,7 +895,7 @@ To move event from one date to another date
 		</td>
 		<td>
 			To pass original date and time of end date of event<br/>
-			<i>required</i>
+			required
 		</td>
 	</tr>
 </table>
@@ -1002,7 +925,44 @@ Delete calendar and calendar event
 
 ### Parameters
 #### Attributes
+
 <table border="0">
+	<tr>
+		<td>
+			<b>from</b><br/>
+			<i>date and time</i>
+		</td>
+		<td>
+			To delete the event for particular date <br/>
+			Only for repetitive events and type = 1 <br/>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<b>type</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			To pass the type accordingly (1,2,3)<br/>
+			Only applicable for repetitive event and compulsary<br/>
+			1. Only this event <br/>
+			2. All the following Event <br/>
+			3. All the Event in series <br/>
+			default = NULL<br/>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<b>is_calendar</b><br/>
+			<i>integer</i>
+		</td>
+		<td>
+			Deletes the calendar from the account<br/>
+		</td>
+	</tr>
+	
 	
 </table>
 

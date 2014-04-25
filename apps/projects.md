@@ -182,7 +182,7 @@ Returns a specific project
 To return a list of all the users on a project
 
 ### Example Request
-`POST /projects/1/people`
+`GET /projects/1/people`
 
 ### Parameters
 #### Attributes
